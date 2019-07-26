@@ -11,7 +11,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   card: {
-    margin: 12
+    margin: 12,
+    maxWidth: 300
   },
   media: {
     height: 300,
@@ -19,14 +20,14 @@ const useStyles = makeStyles({
   }
 });
 
-export default function CharacterCard(props) {
+export default function EpisodeCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.image}
+          image="https://www.comingsoon.net/assets/uploads/2019/06/rickmorty.jpg"
           title="Example Title"
         />
         <CardContent>
@@ -34,15 +35,15 @@ export default function CharacterCard(props) {
             {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Species: {props.speicies}
+            Episode Number: {props.episode}
             <br />
-            Status: {props.status}
+            Air Date: {props.date}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Characters: {props.characters.length}
         </Button>
         <Button size="small" color="primary">
           Learn More
